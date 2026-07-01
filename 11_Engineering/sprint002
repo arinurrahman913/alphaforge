@@ -1,0 +1,19 @@
+# Sprint 002 - Capability Architecture
+
+📅 Date : 2026-06-29
+
+---
+
+## ✅ Progress
+- Mendesain Knowledge Engine.
+- Mendesain Context Engine.
+- Mendesain Evidence Engine.
+- Mendesain Reasoning Engine.
+- Mendesain Decision Engine.
+- Mendesain Validation & Scoring Engine.
+
+## 💡 Insight
+Yang dibangun bukan sekadar Engine, tetapi Capability.
+
+## 🎯 Next
+- Membangun Runtime Engine.
