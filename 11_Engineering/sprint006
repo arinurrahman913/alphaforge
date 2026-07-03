@@ -1,0 +1,44 @@
+# Sprint 006 - Knowledge Domain
+
+📅 Date : 2026-07-03
+
+---
+
+## ✅ Progress
+
+- Domain Model `Knowledge` berhasil dibuat.
+- Knowledge Engine sekarang menghasilkan object `Knowledge`, bukan lagi `dict`.
+- Menambahkan method `summary()` pada Knowledge untuk menampilkan informasi secara terstruktur.
+- Menambahkan `Exchange` sebagai bagian dari fakta perusahaan.
+- Pipeline berhasil diuji menggunakan beberapa ticker (AAPL, NVDA, FTNT, dll).
+- Knowledge Engine berhasil mengklasifikasikan perusahaan berdasarkan Market Cap.
+
+---
+
+## 💡 Insight
+
+Hari ini ditemukan keputusan arsitektur yang sangat penting.
+
+Knowledge hanya menyimpan **Facts**, bukan hasil analisis.
+
+Confidence dihapus dari `Knowledge` karena confidence merupakan tingkat keyakinan terhadap suatu kesimpulan, bukan terhadap fakta.
+
+Arsitektur yang disepakati:
+
+Company → Knowledge → Context → Evidence → Reasoning → Decision
+
+---
+
+## 🎯 Next
+
+- Mendesain Domain Model `Context`.
+- Mendesain Domain Model `Evidence`.
+- Mendesain Domain Model `Reasoning`.
+- Mendesain Domain Model `Decision`.
+- Mulai memisahkan fakta dan hasil analisis di seluruh AlphaForge Runtime.
+
+---
+
+## 🚀 Milestone
+
+Knowledge resmi menjadi Domain Object pertama di AlphaForge.
