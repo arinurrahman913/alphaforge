@@ -1,0 +1,107 @@
+# Sprint 008 - AlphaForge Core v0.1 Review & Roadmap
+
+📅 Date : 2026-07-05
+
+---
+
+## ✅ Progress
+
+- Berhasil menyelesaikan end-to-end pipeline `analyze`.
+- CLI kini mampu melakukan analisis menggunakan:
+  ```bash
+  python -m alphaforge.main analyze <ticker>
+  ```
+- Quote, Company Profile, Financial Snapshot, Price Summary, Technical Analysis, dan Latest News berhasil ditampilkan.
+- Repository berhasil direview secara menyeluruh.
+- Baseline project ditetapkan sebagai pondasi AlphaForge Core v0.1.
+- Struktur project dinilai telah siap untuk tahap polishing.
+
+---
+
+## 💡 Insight
+
+Hari ini AlphaForge memasuki fase yang berbeda.
+
+Fokus pengembangan tidak lagi mengejar penambahan fitur, tetapi meningkatkan kualitas fondasi.
+
+Review arsitektur menunjukkan bahwa sebagian besar komponen utama telah tersedia dan bekerja dengan baik.
+
+Beberapa indikator teknikal seperti RSI, MACD, SMA20, SMA50, dan SMA200 sebenarnya sudah dihitung oleh engine, namun belum dimanfaatkan sepenuhnya pada output CLI.
+
+Artinya, peningkatan berikutnya bukan berasal dari menambah data baru, melainkan memaksimalkan data yang sudah dimiliki menjadi analisis yang lebih bernilai.
+
+Tahap ini menandai transisi dari:
+
+External Data
+
+↓
+
+Data Collection
+
+↓
+
+Analysis Engine
+
+↓
+
+Decision Support
+
+---
+
+## 🔍 Architecture Review
+
+Overall Architecture
+
+**8.8 / 10**
+
+Kelebihan:
+
+- Clean package structure.
+- Service layer sudah terpisah dengan baik.
+- Provider abstraction sudah jelas.
+- Model terorganisasi.
+- Mudah dikembangkan pada versi berikutnya.
+
+Temuan:
+
+- Belum terdapat Scoring Engine.
+- Formatter CLI masih menggunakan banyak `print()`.
+- Header CLI masih muncul dua kali.
+- Report Generator belum tersedia.
+- Belum terdapat automated testing.
+
+---
+
+## 🚀 Next
+
+- Membuat Technical Scoring Engine.
+- Membuat Fundamental Scoring Engine.
+- Memanfaatkan seluruh indikator teknikal yang sudah dihitung.
+- Refactor formatter CLI menjadi modular.
+- Menghapus duplicate header.
+- Menambahkan Markdown Report Generator.
+- Menambahkan pengujian dasar untuk command `analyze`.
+
+---
+
+## 🎯 Target Sprint
+
+Menyelesaikan AlphaForge Core v0.1 sehingga command:
+
+```bash
+python -m alphaforge.main analyze NVDA
+```
+
+menghasilkan:
+
+- Company Profile
+- Quote
+- Financial Snapshot
+- Price Summary
+- Technical Analysis
+- Technical Score
+- Fundamental Score
+- Latest News
+- Markdown Report
+
+secara otomatis dengan output yang rapi dan konsisten.
