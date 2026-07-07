@@ -1,0 +1,34 @@
+# Sprint 002 - Financial Scoring Engine
+
+🗓 Date : 2026-07-07
+
+---
+
+## ✅ Progress
+
+- Review keseluruhan arsitektur AlphaForge v0.1.
+- Menelusuri alur AnalysisEngine → FinancialEngine → ConsoleReport.
+- Mereview FinancialSnapshot dan model scoring.
+- Mengidentifikasi penyebab Financial Score MCO tidak sesuai.
+- Berhasil memperbaiki pembacaan ROE dan Gross Margin pada scoring.
+- Financial Engine kembali berjalan tanpa error.
+- Menetapkan workflow baru: Upload File → Refactor → Replace → Test → Commit.
+
+---
+
+## 💡 Insight
+
+Progress yang cepat tidak selalu berarti menambah banyak kode.
+Hari ini yang paling berharga adalah memahami fondasi AlphaForge sehingga pengembangan berikutnya tidak lagi dilakukan dengan asumsi.
+
+"Kita tidak sedang membuat script, tetapi sedang membangun Investment Intelligence Operating System."
+
+---
+
+## 🎯 Next
+
+- Upgrade Financial Engine v2.
+- Menambahkan Operating Margin Score.
+- Menambahkan Valuation Score.
+- Menyempurnakan Grade System.
+- Mendesain Console Report v2.
