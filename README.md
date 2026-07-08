@@ -95,9 +95,26 @@ Each layer builds upon the previous one to ensure transparency, scalability, mai
 
 ---
 
+# Repositories
+
+AlphaForge is developed across two repositories that progress independently
+and converge over time:
+
+| Repository | Purpose | Status |
+|---|---|---|
+| **alphaforge-main** (this repo) | Knowledge architecture: ontology, knowledge model, research playbooks, engine specifications. | Playbooks phase in progress |
+| **[alphaforge-core](https://github.com/arinurrahman913/alphaforge-core)** | Working implementation. Currently a CLI tool (`analyze <ticker>`) covering company profile, financial scoring, and technical analysis, backed by Yahoo Finance. | Core engine functional, stabilization pass complete (2026-07) |
+
+Progress in one repository does not automatically imply progress in the
+other — see [`19_LONG_TERM_ROADMAP.md`](00_Foundation/19_LONG_TERM_ROADMAP.md)
+for the current status of both tracks, and
+[`12_CHANGELOG.md`](00_Foundation/12_CHANGELOG.md) for milestone history.
+
+---
+
 # Current Stage
 
-## Phase 1 — Knowledge Architecture
+## Knowledge Architecture Track
 
 Completed
 
@@ -109,7 +126,18 @@ Completed
 
 Current Focus
 
-➡️ Playbooks
+➡️ Playbooks — no new content since the last update. Next milestone is
+completing `05_Playbooks/` before moving to Reasoning Engine specs.
+
+## Core Engine Track (`alphaforge-core`)
+
+* ✅ CLI, Yahoo Finance provider, technical analysis, financial scoring —
+  functional end-to-end for single-ticker analysis.
+* ✅ Stabilization pass (2026-07): fixed trend-classification bugs,
+  scoring inconsistencies, and crash-on-missing-data issues.
+* 🚧 Knowledge / Evidence / Reasoning chain — simplified prototype only,
+  not yet aligned with the `06_Engines/` specifications in this repo.
+* ⏳ No automated tests yet (next priority before adding new features).
 
 ---
 
@@ -129,6 +157,12 @@ The thesis should include:
 * Catalysts
 * Investment Thesis
 * Confidence Score
+
+**Progress toward this goal:** the Core Engine currently produces
+Financial Analysis (scoring + snapshot) and basic Technical Analysis.
+Business Quality, Industry/Sector Analysis, Valuation, Risks, Catalysts,
+and a unified Investment Thesis are not yet implemented in code — they
+exist only as playbook specifications in `05_Playbooks/`.
 
 ---
 
@@ -151,12 +185,19 @@ Its purpose is to improve investment decisions through structured reasoning, tru
 
 # Roadmap
 
+See [`19_LONG_TERM_ROADMAP.md`](00_Foundation/19_LONG_TERM_ROADMAP.md) for
+the detailed, actively maintained roadmap covering both the Knowledge
+Architecture and Core Engine tracks.
+
+Summary:
+
 * ✅ Foundation
 * ✅ Ontology
 * ✅ Knowledge
 * ✅ Research
 * ✅ Data
 * 🚧 Playbooks
+* 🚧 Core Engine (functional prototype, pre-testing)
 * ⏳ AI Agents
 * ⏳ Dashboard
 * ⏳ Public Platform
