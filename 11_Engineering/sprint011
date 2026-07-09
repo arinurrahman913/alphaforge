@@ -1,0 +1,39 @@
+# Sprint 010 - Institutional Tracking & Multi-Ticker Scanning
+
+📅 Date : 2026-07-09
+
+---
+
+## ✅ Progress
+
+- Membangun provider SEC EDGAR untuk fetch dan parse filing 13F-HR langsung dari sumber resmi.
+- Menambahkan tracking 10 hedge fund besar (Berkshire, Renaissance, Bridgewater, Tiger Global, Pershing Square, dan lainnya).
+- Mendeteksi perubahan posisi fund antar kuartal: NEW POSITION, INCREASED, DECREASED, SOLD OUT.
+- Mengintegrasikan institutional ownership ke command analyze sebagai section baru.
+- Membangun command scan untuk screening banyak ticker sekaligus, bukan cuma satu-satu.
+- Menambahkan composite score gabungan financial + technical + institutional signal.
+- Menambahkan kategorisasi market cap otomatis (nano/micro/small/mid/large/mega) dengan filter.
+- Menemukan dan memperbaiki bug value 13F yang salah 1000x akibat perubahan aturan pelaporan SEC sejak 2023.
+- Menemukan dan memperbaiki false-positive matching nama perusahaan yang sempat nyasar ke data yang sama sekali salah.
+- Memperbaiki crash yang muncul akibat perilaku dict literal Python yang eager-evaluated.
+
+---
+
+## 💡 Insight
+
+Sprint ini pindah fokus dari "menganalisis satu saham yang sudah diketahui" ke "membantu menemukan kandidat" — bagian yang sebelumnya sama sekali belum ada.
+
+Bug paling berbahaya di sprint ini bukan yang bikin crash. Justru yang paling berbahaya adalah bug yang menghasilkan angka terlihat meyakinkan tapi salah total — value 13F yang membengkak 1000x, atau data BlackBerry yang ternyata tertukar sama perusahaan lain. Keduanya baru ketahuan karena ada sanity check manual (bandingkan hasil ke market cap asli), bukan karena sistem otomatis mendeteksinya sendiri.
+
+Ini jadi pengingat penting: begitu AlphaForge mulai narik data dari sumber eksternal yang formatnya bisa berubah (SEC, Yahoo Finance), keakuratan data itu risiko yang jauh lebih besar dari sekadar reliability (nggak crash). Sistem yang "jalan tanpa error" belum tentu "kasih data yang benar".
+
+"Data yang salah tapi terlihat rapi itu lebih berbahaya daripada program yang crash."
+
+---
+
+## 🎯 Next
+
+- Tambahkan automated testing untuk logic scoring dan matching, tanpa perlu koneksi internet.
+- Bangun command fund untuk melihat seluruh portofolio 1 fund, bukan cuma posisinya di 1 ticker.
+- Evaluasi sumber data screener yang lebih live untuk menggantikan watchlist manual.
+- Tambahkan warning di report untuk kasus grade tinggi tapi net income negatif.
